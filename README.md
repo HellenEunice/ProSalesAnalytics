@@ -3,7 +3,7 @@ Proyecto de Ciencia de datos para ayudar a una empresa a predecir las ventas y r
 
 El proyecto se basa en un primer modelo de series temporales con Random Forest Regression para predecir la cantidad de ventas de los productos para la siguiente semana.
 
-Y el segundo modelo de Recomendación de productos con KNN Basic, utlizando la librería Surprise. Este modelo utiliza el filtrado colaborativo basado en clientes que sugiere productos a un usuario en función de las preferencias y comportamientos de usuarios similares.
+Y un segundo modelo de Recomendación de productos con KNN Basic, utlizando la librería Surprise. Este modelo utiliza el filtrado colaborativo basado en clientes que sugiere productos a un usuario en función de las preferencias y comportamientos de usuarios similares.
 
 ![ProSales Analytics Logo](https://github.com/HellenEunice/ProSalesAnalytics/assets/145653265/96bc403e-625f-46c2-99ac-0f02a62ec017)
 
@@ -25,6 +25,13 @@ La fuente de datos es una empresa real que vende productos de alimentación. A l
 - Productos disponibles en la tienda. 
 
 ## EDA
+El análisis exploratorio de datos lo realizamos teniendo cómo base los clientes, ventas y productos, para ver cómo influían las diferentes variables en ellos.
+
+![EDA de comparación de clientes que más comprán con los clientes que más visitan la tienda](https://github.com/HellenEunice/ProSalesAnalytics/assets/145653265/55fc8c6f-85fe-4f4d-95c5-8bb87ea73f64)
+
+![EDA sobre las ventas totales según canal de venta y mes](https://github.com/HellenEunice/ProSalesAnalytics/assets/145653265/1cb8df29-f77d-4f4f-9f71-738f0d2038bc)
+
+![EDA sobre la evolución de ventas de las categorías en los meses](https://github.com/HellenEunice/ProSalesAnalytics/assets/145653265/3e0adedf-7c3a-408d-89ee-67521f11a421)
 
 
 ## Modelos
@@ -34,7 +41,11 @@ Para el proyecto se utilizaron varios modelos para lograr tres objetivos diferen
 - Segmentación de clientes
   
 ### Predicción de Ventas
-El modelo que mejor funciona para la cantidad de datos que teníamos es Random Forest Regression utilizando Series Temporales. 
+El modelo que mejor funciona para la cantidad de datos que teníamos es Random Forest Regression utilizando Series Temporales con un RMSE de 0.7144
+y R2 de 0.3195. 
+
+![Gráfico sobre el resultado del modelo de Series Temporales ](https://github.com/HellenEunice/ProSalesAnalytics/assets/145653265/51cf99ab-febf-46d3-b68e-d3a6abe0f280)
+
 
 ### Otros Modelos para predicción de ventas. 
 También utilizamos otros modelos de linear regression y random forest regression, utilizando nuevas variables creadas, pero no obtuvieron los mejores resultados. 
@@ -43,10 +54,13 @@ También utilizamos otros modelos de linear regression y random forest regressio
 
 ### Recomendación de Productos
 Para la recomendación de productos utilizamos la librería Surprise y el modelo KNN Basic, que obtuvo un error de RMSE de 24.0376 y R2 de 0.3177. 
+![Resultado del modelo de recomendacion de productos](https://github.com/HellenEunice/ProSalesAnalytics/assets/145653265/94feda14-c6d3-4e19-9cdc-2ffe636bceba)
 
 
 ### Segmentación de clientes
-En la segmentación de clientes 
+Hemos intentado segmentar los clientes en grupos homogéneos según comportamientos de compra y preferencias con el modelo de aprendizaje no supervisado K-means.
+![Resultado del modelo de segmentación de clientes](https://github.com/HellenEunice/ProSalesAnalytics/assets/145653265/f282f901-ee3a-46f2-94e0-6e7c63db2625)
+
 
 # Conclusiones
 - Dado a la escasez de datos, los modelo no dan el resultado óptimo.
@@ -54,3 +68,6 @@ En la segmentación de clientes
 
 
 ## Cambios a futuro
+- Aumentar la cantidad de datos y variables que ayuden a comprender mejor las ventas y los clientes.
+- Con el aumento de datos, se puede probar con modelos más avanzados. 
+
